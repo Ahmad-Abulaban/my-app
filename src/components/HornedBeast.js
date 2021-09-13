@@ -1,21 +1,48 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+
 
 class HornedBeast extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            numOfVotes: 0
+        }
+    }
+
+    
+    increaseNumberOfVotes = () => {
+        this.setState({
+            numOfVotes: this.state.numOfVotes + 1
+        })
+    }
+
     render(){
         return(
-            // <div>
-
-            //     <h2>UniWhal</h2>
-            //     <img src="http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg" alt="UniWhalImg" title="UniWhal" />
-            //     <p>Description: A unicorn and a narwhal nuzzling their horns</p>
-
-
-            // </div>
-            <div>
+            <div style={{ width: '18rem'}}  >
                 
-                <h2>{this.props.title} </h2>
-                <img src={this.props.img} alt="" />
-                <p>{this.props.Parg}</p>
+
+
+                <Card >
+                    <Card.Img className='cardVote' variant="top" src={this.props.img} alt={this.props.keyword} />
+                    <Card.Body>
+                        <Card.Title>{this.props.title}</Card.Title>
+                        <Card.Text>
+                            horns {this.props.horns}
+                            <br />
+                            {this.props.Parg}
+                        </Card.Text>
+                        <Card.Text>
+                            Number of Votes {this.state.numOfVotes}
+                        </Card.Text>
+                        <Button onClick={this.increaseNumberOfVotes } variant="primary">Vote</Button>
+                    </Card.Body>
+                </Card>
+
+
 
 
             </div>
