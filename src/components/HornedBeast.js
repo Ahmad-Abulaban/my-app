@@ -9,22 +9,21 @@ class HornedBeast extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            numOfVotes: 0
+            numOfVotes: 0,
+            // showModal: false
+
         }
     }
 
-    
     increaseNumberOfVotes = () => {
         this.setState({
             numOfVotes: this.state.numOfVotes + 1
         })
     }
 
-    render(){
-        return(
-            <div style={{ width: '18rem'}}  >
-                
-
+    render() {
+        return (
+            <div style={{ width: '18rem' }}  >
 
                 <Card >
                     <Card.Img className='cardVote' variant="top" src={this.props.img} alt={this.props.keyword} />
@@ -36,14 +35,17 @@ class HornedBeast extends React.Component {
                             {this.props.Parg}
                         </Card.Text>
                         <Card.Text>
-                        ❤️  Number of Votes {this.state.numOfVotes}
+                            ❤️  Number of Votes {this.state.numOfVotes}
                         </Card.Text>
-                        <Button onClick={this.increaseNumberOfVotes } variant="primary">Vote</Button>
+                        <Button onClick={this.increaseNumberOfVotes} variant="primary">Vote</Button>
+                        <br />
+                        <br />
+                        <Button variant="primary" onClick={() => {
+
+                            this.props.beastNameButton(this.props.title, this.props.img, this.props.Parg)
+                        }}>Modal</Button>
                     </Card.Body>
                 </Card>
-
-
-
 
             </div>
         )
