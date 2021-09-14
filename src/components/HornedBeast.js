@@ -36,7 +36,7 @@ class HornedBeast extends React.Component {
                             {this.props.Parg}
                         </Card.Text>
                         <Card.Text>
-                            Number of Votes {this.state.numOfVotes}
+                        ❤️  Number of Votes {this.state.numOfVotes}
                         </Card.Text>
                         <Button onClick={this.increaseNumberOfVotes } variant="primary">Vote</Button>
                     </Card.Body>
