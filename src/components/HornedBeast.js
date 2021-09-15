@@ -10,7 +10,6 @@ class HornedBeast extends React.Component {
         super(props);
         this.state = {
             numOfVotes: 0,
-            // showModal: false
 
         }
     }
