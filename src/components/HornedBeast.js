@@ -22,9 +22,9 @@ class HornedBeast extends React.Component {
 
     render() {
         return (
-            <div style={{ width: '18rem' }}  >
+            <div style={{ width: '25%', float: "left" }}  >
 
-                <Card >
+                <Card style={{ minHeight: '900px' }}>
                     <Card.Img className='cardVote' variant="top" src={this.props.img} alt={this.props.keyword} />
                     <Card.Body>
                         <Card.Title>{this.props.title}</Card.Title>
